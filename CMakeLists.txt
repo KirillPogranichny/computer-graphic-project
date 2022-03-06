@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.17)
 project(computer_graphic_project)
 
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD 20)
-
+set(Qt6_DIR "~/Users/ivan/Qt/6.2.3/macos/lib/cmake/Qt6")
 add_executable(computer_graphic_project main.cpp)
+find_package(Qt6Widgets REQUIRED)
+target_link_libraries(computer_graphic_project Qt6::Widgets)
