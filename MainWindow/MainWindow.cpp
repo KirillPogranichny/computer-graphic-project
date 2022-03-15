@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
 	, ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-  this->setWindowTitle("DSP-Ткаченко");
+  this->setWindowTitle("DSP-Ткаченко, Пограничный, Семенов, Смирнов");
 }
 
 MainWindow::~MainWindow()
