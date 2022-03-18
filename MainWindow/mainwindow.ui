@@ -27,8 +27,8 @@
     <property name="title">
      <string>Файл</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_2"/>
+    <addaction name="fileOpen"/>
+    <addaction name="fileSave"/>
     <addaction name="action_3"/>
    </widget>
    <widget class="QMenu" name="menu_2">
@@ -36,12 +36,14 @@
      <string>Моделирование</string>
     </property>
     <addaction name="action_1"/>
+    <addaction name="action_9"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
      <string>Фильтрация</string>
     </property>
     <addaction name="action_4"/>
+    <addaction name="action_8"/>
    </widget>
    <widget class="QMenu" name="menu_4">
     <property name="title">
@@ -69,12 +71,12 @@
    <addaction name="menu_6"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="fileOpen">
    <property name="text">
     <string>Открыть</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="fileSave">
    <property name="text">
     <string>Сохранить</string>
    </property>
@@ -107,6 +109,16 @@
   <action name="action_7">
    <property name="text">
     <string>Пункт1</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>Пункт2</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>Пункт2</string>
    </property>
   </action>
  </widget>
