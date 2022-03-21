@@ -20,7 +20,9 @@ set(PROJECT_SOURCES
         MainWindow/Mainwindow.cpp
         MainWindow/Mainwindow.h
         MainWindow/mainwindow.ui
-        src/FileHandler/FileHandler.cpp src/FileHandler/FileHandler.h)
+        src/FileHandler/FileHandler.cpp
+        src/FileHandler/FileHandler.h
+        src/FileHandler/dataStructure.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(computer-graphic-project

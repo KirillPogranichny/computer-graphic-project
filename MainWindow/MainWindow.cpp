@@ -2,8 +2,9 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <string>
+#include "src/FileHandler/FileHandler.h"
+#include <QMessageBox>
 #include <iostream>
-#include <fstream>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -22,7 +23,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_fileOpen_triggered()
 {
-	QString data = QFileDialog::getOpenFileName(0, "Выберите файл", "/");
+	QString path_to_open_file = QFileDialog::getOpenFileName(this, "Выберите файл", "/", "*.txt");
+
+	if (path_to_open_file.isEmpty() && path_to_open_file.isNull()){
+	  return;
+	}
+
+	FileHandler file;
+  	file.openFile(path_to_open_file.toStdString());
+  	if ( !file.isFileOpen()){
+  	  QMessageBox::warning(this, "Внимание", "Ошибка открытия файла");
+  	  return;
+  	}
+
 
 }
 
