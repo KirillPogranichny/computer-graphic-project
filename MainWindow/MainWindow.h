@@ -23,6 +23,6 @@ private slots:
 
 private:
   Ui::MainWindow *ui;
-  dataStructure current_data;
+
 };
 #endif // MAINWINDOW_H

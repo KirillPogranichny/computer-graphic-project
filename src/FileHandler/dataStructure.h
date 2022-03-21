@@ -1,5 +1,10 @@
-#include <string>
+//
+// Created by иван on 21.03.2022.
+//
+#include <iostream>
 #include <vector>
+#ifndef COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_
+#define COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_
 typedef struct dataStructure{
   int number_of_channels = 0;
   int number_of_samples = 0;
@@ -10,3 +15,4 @@ typedef struct dataStructure{
   std::vector<std::string> signals_channels;
 
 }dataStructure;
+#endif //COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_

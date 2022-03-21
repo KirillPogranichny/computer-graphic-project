@@ -14,7 +14,7 @@ bool FileHandler::isFileOpen() {
 
 dataStructure FileHandler::getData() {
 	if (this->isFileOpen()){
-		
+
 	}
 
 }
