@@ -1,4 +1,5 @@
 #include <fstream>
+#include "dataStructure.h"
 
 #ifndef COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_FILEHANDLER_H_
 #define COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_FILEHANDLER_H_
@@ -10,7 +11,7 @@ class FileHandler {
 
  public:
   	void openFile(const std::string& path);
-  	std::string getData();
+  	dataStructure getData();
   	bool isFileOpen();
 };
 

@@ -12,6 +12,9 @@ bool FileHandler::isFileOpen() {
   return this->file.is_open();
 }
 
-std::string FileHandler::getData() {
+dataStructure FileHandler::getData() {
+	if (this->isFileOpen()){
+		
+	}
 
 }

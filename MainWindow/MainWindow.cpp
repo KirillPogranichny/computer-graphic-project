@@ -31,10 +31,12 @@ void MainWindow::on_fileOpen_triggered()
 
 	FileHandler file;
   	file.openFile(path_to_open_file.toStdString());
+
   	if ( !file.isFileOpen()){
   	  QMessageBox::warning(this, "Внимание", "Ошибка открытия файла");
   	  return;
   	}
+
 
 
 }

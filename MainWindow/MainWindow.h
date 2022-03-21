@@ -5,6 +5,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <src/FileHandler/dataStructure.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,5 +23,6 @@ private slots:
 
 private:
   Ui::MainWindow *ui;
+  dataStructure current_data;
 };
 #endif // MAINWINDOW_H
