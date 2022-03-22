@@ -87,9 +87,19 @@ void FileHandler::readDataField(std::vector<CanalOfSignal> &field, const std::ve
 	if (line[0] == '#') {
 	  continue;
 	}
+	std::string string_num;
 	int name_index = 0;
 	for ( auto sym: line ){
-
+		if ( sym == ' ' ){
+		  field[name_index % field.size()].values_of_signal.push_back(atof(string_num.c_str()));
+		  name_index++;
+		  string_num.clear();
+		  continue;
+		}
+		string_num += sym;
+	}
+	if (!string_num.empty()){
+	  field[name_index % field.size()].values_of_signal.push_back(atof(string_num.c_str()));
 	}
   }
 }
@@ -103,6 +113,7 @@ dataStructure FileHandler::getData() {
 	  this->readDataField(structured_data.signal_start_date);
 	  this->readDataField(structured_data.signal_start_time);
 	  this->readDataField(structured_data.channels_names);
+	  this->readDataField(structured_data.signals_channels, structured_data.channels_names);
 	}
 	return structured_data;
 }

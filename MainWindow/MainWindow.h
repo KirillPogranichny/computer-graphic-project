@@ -23,6 +23,7 @@ private slots:
 
 private:
   Ui::MainWindow *ui;
+  dataStructure main_data_from_file;
 
 };
 #endif // MAINWINDOW_H
