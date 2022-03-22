@@ -22,7 +22,7 @@ set(PROJECT_SOURCES
         MainWindow/mainwindow.ui
         src/FileHandler/FileHandler.cpp
         src/FileHandler/FileHandler.h
-        src/FileHandler/dataStructure.h)
+        src/FileHandler/dataStructure.h src/CanalOfSignal/CanalOfSignal.cpp src/CanalOfSignal/CanalOfSignal.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(computer-graphic-project
@@ -37,13 +37,13 @@ else()
     if(ANDROID)
         add_library(computer-graphic-project SHARED
                 ${PROJECT_SOURCES}
-                src/FileHandler/FileHandler.cpp src/FileHandler/FileHandler.h)
+                src/FileHandler/FileHandler.cpp src/FileHandler/FileHandler.h src/CanalOfSignal/CanalOfSignal.cpp src/CanalOfSignal/CanalOfSignal.h)
         # Define properties for Android with Qt 5 after find_package() calls as:
         #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(computer-graphic-project
                 ${PROJECT_SOURCES}
-                src/FileHandler/FileHandler.cpp src/FileHandler/FileHandler.h)
+                src/FileHandler/FileHandler.cpp src/FileHandler/FileHandler.h src/CanalOfSignal/CanalOfSignal.cpp src/CanalOfSignal/CanalOfSignal.h)
     endif()
 endif()
 

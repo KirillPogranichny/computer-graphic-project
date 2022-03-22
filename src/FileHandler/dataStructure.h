@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <vector>
+#include "src/CanalOfSignal/CanalOfSignal.h"
 #ifndef COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_
 #define COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_
 typedef struct dataStructure{
@@ -12,7 +13,7 @@ typedef struct dataStructure{
   std::string signal_start_date;
   std::string signal_start_time;
   std::vector<std::string> channels_names;
-  std::vector<std::string> signals_channels;
+  std::vector<CanalOfSignal> signals_channels;
 
 }dataStructure;
 #endif //COMPUTER_GRAPHIC_PROJECT_SRC_FILEHANDLER_DATASTRUCTUR_H_

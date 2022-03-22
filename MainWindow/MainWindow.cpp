@@ -37,7 +37,7 @@ void MainWindow::on_fileOpen_triggered()
   	  return;
   	}
 
-
+	file.getData();
 
 }
 
