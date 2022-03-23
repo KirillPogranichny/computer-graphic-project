@@ -4,7 +4,10 @@
 #include <string>
 #include "src/FileHandler/FileHandler.h"
 #include <QMessageBox>
-#include <iostream>
+#include <QScrollArea>
+#include <QDockWidget>
+#include <QPainter>
+#include <QLabel>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -38,6 +41,13 @@ void MainWindow::on_fileOpen_triggered()
   	}
 
 	this->main_data_from_file = file.getData();
+
+  	QDockWidget *dock_for_right_scroll = new QDockWidget("Channels",this);
+  	QScrollArea *scroll_area_right = new QScrollArea(this);
+  	scroll_area_right->setStyleSheet("background-color:rgb(82, 38, 38);;");
+  	dock_for_right_scroll->setWidget(scroll_area_right);
+  	addDockWidget(Qt::RightDockWidgetArea, dock_for_right_scroll);
+  	
 
 }
 

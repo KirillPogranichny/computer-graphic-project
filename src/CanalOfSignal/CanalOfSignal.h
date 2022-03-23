@@ -8,8 +8,8 @@
 
 class CanalOfSignal {
  private:
-  std::string name_of_channel;
  public:
+  std::string name_of_channel;
   CanalOfSignal(std::string name_of_channels);
   std::vector<double> values_of_signal;
 };
