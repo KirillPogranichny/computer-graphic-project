@@ -51,13 +51,32 @@ void MainWindow::on_fileOpen_triggered()
 
 	main_Tab_Widget->addTab(new_tab, "Канал 1");
 
-  	QScrollArea *gg = new QScrollArea();
+  	QWidget *info_widget = new QWidget();
   	QBoxLayout *box = new QBoxLayout(QBoxLayout::TopToBottom);
   	QLabel *label = new QLabel();
-  	label->setText(std::to_string(this->main_data_from_file.number_of_channels).c_str());
+
+  	std::string info_string ="Общее число каналов   -   " + std::to_string(this->main_data_from_file.number_of_channels);
+  	label->setText(info_string.c_str());
   	box->addWidget(label);
-	gg->setLayout(box);
-  	main_Tab_Widget->addTab(gg, "Информация о каналах");
+
+  	label = new QLabel();
+  	info_string = "Общее количество отсчетов    -    " + std::to_string(this->main_data_from_file.number_of_samples);
+  	label->setText(info_string.c_str());
+  	box->addWidget(label);
+
+  	label = new QLabel();
+  	info_string = "Частота дискретизации     -    " + std::to_string(this->main_data_from_file.sampling_frequency);
+  	label->setText(info_string.c_str());
+  	box->addWidget(label);
+
+  	label = new QLabel();
+  	info_string = "Дата и время начала записи     -    " +this->main_data_from_file.signal_start_date+ this->main_data_from_file.signal_start_time;
+  	label->setText(info_string.c_str());
+  	box->addWidget(label);
+  	
+
+	info_widget->setLayout(box);
+  	main_Tab_Widget->addTab(info_widget, "Информация о каналах");
 
 
 
