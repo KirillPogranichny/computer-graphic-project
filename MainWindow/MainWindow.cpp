@@ -1,13 +1,13 @@
-#include "Mainwindow.h"
+#include "MainWindow.h"
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <string>
 #include "src/FileHandler/FileHandler.h"
+#include <src/BaseWaveform/BaseWaveform.h>
 #include <QMessageBox>
-#include <QScrollArea>
-#include <QDockWidget>
-#include <QPainter>
+#include <QBoxLayout>
 #include <QLabel>
+#include <QScrollArea>
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
   this->setWindowTitle("DSP-Ткаченко, Пограничный, Семенов, Смирнов");
   connect(this->ui->fileOpen, &QAction::triggered, this, &MainWindow::on_fileOpen_triggered);
   connect(this->ui->fileSave, &QAction::triggered, this, &MainWindow::on_fileSave_triggered);
+
 }
 
 MainWindow::~MainWindow()
@@ -42,12 +43,23 @@ void MainWindow::on_fileOpen_triggered()
 
 	this->main_data_from_file = file.getData();
 
-  	QDockWidget *dock_for_right_scroll = new QDockWidget("Channels",this);
-  	QScrollArea *scroll_area_right = new QScrollArea(this);
-  	scroll_area_right->setStyleSheet("background-color:rgb(82, 38, 38);;");
-  	dock_for_right_scroll->setWidget(scroll_area_right);
-  	addDockWidget(Qt::RightDockWidgetArea, dock_for_right_scroll);
-  	
+  	QTabWidget  *main_Tab_Widget = new QTabWidget(this);
+  	main_Tab_Widget->setGeometry(0, 0, this->width(), this->height());
+  	main_Tab_Widget->show();
+
+  	BaseWaveform *new_tab = new BaseWaveform();
+
+	main_Tab_Widget->addTab(new_tab, "Канал 1");
+
+  	QScrollArea *gg = new QScrollArea();
+  	QBoxLayout *box = new QBoxLayout(QBoxLayout::TopToBottom);
+  	QLabel *label = new QLabel();
+  	label->setText(std::to_string(this->main_data_from_file.number_of_channels).c_str());
+  	box->addWidget(label);
+	gg->setLayout(box);
+  	main_Tab_Widget->addTab(gg, "Информация о каналах");
+
+
 
 }
 

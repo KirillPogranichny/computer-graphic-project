@@ -6,6 +6,7 @@
 
 #include <QMainWindow>
 #include <src/FileHandler/dataStructure.h>
+#include <QTabWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +17,8 @@ class MainWindow : public QMainWindow {
  public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
+  QDockWidget *dock_for_right_scroll;
+
 
 private slots:
   void on_fileOpen_triggered();
@@ -24,6 +27,7 @@ private slots:
 private:
   Ui::MainWindow *ui;
   dataStructure main_data_from_file;
+  QTabWidget *main_tab_widget;
 
 };
 #endif // MAINWINDOW_H
